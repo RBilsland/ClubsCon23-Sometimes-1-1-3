@@ -22,7 +22,7 @@ Welcome to the content that is associated with my "Sometime 1 + 1 = 3, the power
 ## Why?
 With physical computing, being able to play with an individual device and see what you can make it do is a fantastic experience but thats it, an individual device. In reality the world is made up of devices that are constantly talking to each other and the presentation showed a way that allows children to code a device that is part of something bigger. For children this can be a real eye opener to a whole new world of possibilities. Showing what is possible will only start a whole new line of "what if" and "could I" discussions.
 
-I could have used some off the shelf solutions but they all come at a cost in comparison to the Micro:bit. Also this way children will get more hands-on experiences constructing a sensor and then coding the sending of information. 
+I could have used some off the shelf solutions but they all come at a cost in comparison to the Micro:bit. Also this way children will get a more hands-on experiences constructing a sensor and then coding the sending of its information. 
 
 # The Setup
 
