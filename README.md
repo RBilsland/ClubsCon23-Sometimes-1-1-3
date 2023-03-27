@@ -2,20 +2,20 @@
 
 **Contents**
 
-- [ClubsCon23 - Sometime 1 + 1 = 3](#clubscon23--sometimes-1--1--3 "ClubsCon23 - Sometime 1 + 1 = 3")
+- [ClubsCon23 - Sometime 1 + 1 = 3](#clubscon23---sometimes-1--1--3 "ClubsCon23 - Sometime 1 + 1 = 3")
 	- [Why?](#why "Why?")
 - [The Setup](#the-setup "The Setup")
 	- [Hardware Design](#hardware-design "Hardware Design")
 	- [Software Stack](#software-stack "Software Stack")
 		- [The Sensor Micro:bits](#the-sensor-microbits "The Sensor Micro:bits")
-			- [Acceleration](#1-acceleration "Acceleration")
+			- [Acceleration](#1-acceleration-x-y--z "Acceleration")
 			- [Compass](#2-compass "Compass")
 		- [The Gateway Micro:bit](#the-gateway-microbit "The Gateway Micro:bit")
 		- [Node-RED](#node-red "Node-RED")
 			- [Issues](#issues "Issues")
 				- [The *Gateway* Micro:bit is Showing as \"not connected\"](#the-gateway-microbit-is-showing-as-not-connected "The *Gateway* Micro:bit is Showing as \"not connected\"")
 		- [Browser Based Graphs](#browser-based-graphs "Browser Based Graphs")
-	- [Everything Working?](#everything-working "Everything Working?")
+- [Everything Working?](#everything-working "Everything Working?")
 
 Welcome to the content that is associated with my "Sometime 1 + 1 = 3, the power of connecting devices" presentation at the Raspberry Pi Foundations ClubsCon23 conference (24th & 25th March 2023). The presentation looked at connecting devices together to create something greater than the sum of all it's parts. My demonstration focused on a way to let children play and explore the idea of using Micro:bits as remote devices to capture and share their inputs in real time. These inputs are wirelessly displayed as charts and in real time using a Raspberry Pi and a browser.
 
@@ -157,7 +157,7 @@ Once the compass *Sensor* Micro:bit is sending information then the compass grap
 
 ![Node Red UI Compass Graph Updating](Images/ClubsCon23-NodeRED-UI-4.png "Node Red UI Compass Graph Updating")
 
-## Everything Working?
+# Everything Working?
 
 If you've read this far then firstly well done, but have you read this far before starting anything or after you've realised somethings not working? If everything is working then my acceleration sensor hardware looked like this.
 
