@@ -8,7 +8,7 @@
 	- [Hardware Design](#hardware-design "Hardware Design")
 	- [Software Stack](#software-stack "Software Stack")
 		- [The Sensor Micro:bits](#the-sensor-microbits "The Sensor Micro:bits")
-			- [Acceleration](#1-acceleration-x-y--z "Acceleration")
+			- [Acceleration (X, Y & Z)](#1-acceleration-x-y--z "Acceleration")
 			- [Compass](#2-compass "Compass")
 		- [The Gateway Micro:bit](#the-gateway-microbit "The Gateway Micro:bit")
 		- [Node-RED](#node-red "Node-RED")
@@ -46,19 +46,19 @@ This GitHub repository contains two example sensors. Each of them uses the Micro
 ![MbSN Acceleration Sensor](Images/ClubsCon23-Blocks-AccelerationY.png "Acceleration Y Sensor")
 ![MbSN Acceleration Sensor](Images/ClubsCon23-Blocks-AccelerationZ.png "Acceleration Z Sensor")
 
-After initialising the Radio Group to 123, the acceleration strength value, a combination of the X, Y & Z values, is sent 10 times a second (every 100ms). Download the [ClubsCon23-Acceleration-X.hex](https://raw.githubusercontent.com/RBilsland/Microbit-Sensor-Network/main/Microbit/ClubsCon23-Acceleration-X.hex "ClubsCon23-Acceleration-X.hex"), [ClubsCon23-Acceleration-Y.hex](https://raw.githubusercontent.com/RBilsland/Microbit-Sensor-Network/main/Microbit/ClubsCon23-Acceleration-Y.hex "ClubsCon23-Acceleration-Y.hex"), [ClubsCon23-Acceleration-Z.hex](https://raw.githubusercontent.com/RBilsland/Microbit-Sensor-Network/main/Microbit/ClubsCon23-Acceleration-Z.hex "ClubsCon23-Acceleration-Z.hex") .hex files ready to be loaded onto separate Micro:bits.
+After initialising the Radio Group to 123, the acceleration strength value, a combination of the X, Y & Z values, is sent 10 times a second (every 100ms). Download the [ClubsCon23-Acceleration-X.hex](https://raw.githubusercontent.com/RBilsland/ClubsCon23-Sometimes-1-1-3/main/Microbit/ClubsCon23-Acceleration-X.hex "ClubsCon23-Acceleration-X.hex"), [ClubsCon23-Acceleration-Y.hex](https://raw.githubusercontent.com/RBilsland/ClubsCon23-Sometimes-1-1-3/main/Microbit/ClubsCon23-Acceleration-Y.hex "ClubsCon23-Acceleration-Y.hex"), [ClubsCon23-Acceleration-Z.hex](https://raw.githubusercontent.com/RBilsland/ClubsCon23-Sometimes-1-1-3/main/Microbit//main/Microbit/ClubsCon23-Acceleration-Z.hex "ClubsCon23-Acceleration-Z.hex") .hex files ready to be loaded onto separate Micro:bits.
 
 #### 2. Compass
 ![MbSN Light Level Sensor](Images/ClubsCon23-Blocks-Compass.png "Compass Sensor")
 
-After initialising the Radio Group to 123, the compass heading is sent 2 times a second (every 500ms). This sensor also includes blocks for it to be used with [Kitronik's ZIP Halo HD accessory](https://kitronik.co.uk/products/5672-kitronik-zip-halo-hd-for-microbit). If you want to remove this functionality then delete set haloDisplay block in on start section and the first three blocks (haloDisplay clear, set and show) in the every section. Download the [ClubsCon23-Compass.hex](https://raw.githubusercontent.com/RBilsland/Microbit-Sensor-Network/main/Microbit/ClubsCon23-Compass.hex "ClubsCon23-Compass.hex") .hex file ready to be loaded onto a Micro:bit.
+After initialising the Radio Group to 123, the compass heading is sent 2 times a second (every 500ms). This sensor also includes blocks for it to be used with [Kitronik's ZIP Halo HD accessory](https://kitronik.co.uk/products/5672-kitronik-zip-halo-hd-for-microbit). If you want to remove this functionality then delete set haloDisplay block in on start section and the first three blocks (haloDisplay clear, set and show) in the every section. Download the [ClubsCon23-Compass.hex](https://raw.githubusercontent.com/RBilsland/ClubsCon23-Sometimes-1-1-3/main/Microbit/ClubsCon23-Compass.hex "ClubsCon23-Compass.hex") .hex file ready to be loaded onto a Micro:bit.
 
 ### The *Gateway* Micro:bit
 This Micro:bit has only a single task to perform, receive all incoming information from one or many Micro:bits and forward it onto Node-RED on the Raspberry Pi. If you have decided to change the Radio Group used on the *sensor* Micro:bits then remember to change the Radio Group here to match. Again the inclusion of the toggle block is only there to provide a visual indicator that information is being forwarded. As long as information is sent in the same format from the *sensor* Micro:bits then this will not need to be changed.
  
 ![MbSN Gateway](Images/ClubsCon23-Blocks-Gateway.png "MbSN Gateway")
 
-After redirecting the serial connection to be over USB, setting the serial baud rate (the speed at which the information is sent) and initialising the Radio Group to 123, every time information is received it is reformatted to a simple JSON string that Node-RED on the Raspberry Pi can easily read. Download the [ClubsCon23-Gateway.hex](https://raw.githubusercontent.com/RBilsland/Microbit-Sensor-Network/main/Microbit/ClubsCon23-Gateway.hex "ClubsCon23-Gateway.hex") .hex file ready to be loaded onto a Micro:bit.
+After redirecting the serial connection to be over USB, setting the serial baud rate (the speed at which the information is sent) and initialising the Radio Group to 123, every time information is received it is reformatted to a simple JSON string that Node-RED on the Raspberry Pi can easily read. Download the [ClubsCon23-Gateway.hex](https://raw.githubusercontent.com/RBilsland/ClubsCon23-Sometimes-1-1-3/main/Microbit/main/Microbit/ClubsCon23-Gateway.hex "ClubsCon23-Gateway.hex") .hex file ready to be loaded onto a Micro:bit.
 
 ### Node-RED
 Whether Node-RED is or isn't already installed on your Raspberry Pi doesn't matter as the script they provided can perform both installs and updates. Even if you believe you have Node-RED setup on your Raspberry Pi it could still be worth checking as recently they have released version 3. If you have any issues installing or updating you can find further help at Node-REDs [Running on Raspberry Pi](https://nodered.org/docs/getting-started/raspberrypi "Running on Raspberry Pi") guide.
@@ -100,7 +100,7 @@ From here click the hamburger menu (the three horizontal lines) in the top right
 
 ![Node RED Drop Down Menu, Import](Images/ClubsCon23-NodeRED-4.png "Node RED Drop Down Menu, Import")
 
-From the import dialog choose to select a file to import and select this file, [ClubsCon23-NodeRED.json](https://raw.githubusercontent.com/RBilsland/Microbit-Sensor-Network/main/Node-RED/ClubsCon23-NodeRED.json "ClubsCon23-NodeRED.json"), once you have downloaded it to your machine.
+From the import dialog choose to select a file to import and select this file, [ClubsCon23-NodeRED.json](https://raw.githubusercontent.com/RBilsland/ClubsCon23-Sometimes-1-1-3/main/Node-RED/ClubsCon23-NodeRED.json "ClubsCon23-NodeRED.json"), once you have downloaded it to your machine.
 
 ![Node RED Empty Import Dialog](Images/ClubsCon23-NodeRED-5.png "Node RED Empty Import Dialog")
 
