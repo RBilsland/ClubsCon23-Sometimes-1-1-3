@@ -1,0 +1,236 @@
+[
+    {
+        "id": "b51cd3c2de6b6fae",
+        "type": "tab",
+        "label": "ClubsCon23 - Sometime 1 + 1 = 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1bf7c21bdecb409c",
+        "type": "ui_chart",
+        "z": "b51cd3c2de6b6fae",
+        "name": "",
+        "group": "2c684f2bbbab4934",
+        "order": 1,
+        "width": 39,
+        "height": 23,
+        "label": " Acceleration",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "MM:ss",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-1024",
+        "ymax": "1024",
+        "removeOlder": "20",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1050,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "18d21ebe29954dad",
+        "type": "serial in",
+        "z": "b51cd3c2de6b6fae",
+        "name": "",
+        "serial": "2096bc74b3257a67",
+        "x": 310,
+        "y": 440,
+        "wires": [
+            [
+                "1aa8db3ab65b5121"
+            ]
+        ]
+    },
+    {
+        "id": "1aa8db3ab65b5121",
+        "type": "json",
+        "z": "b51cd3c2de6b6fae",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 490,
+        "y": 440,
+        "wires": [
+            [
+                "dd9052e8969afa24"
+            ]
+        ]
+    },
+    {
+        "id": "dd9052e8969afa24",
+        "type": "change",
+        "z": "b51cd3c2de6b6fae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "payload.name",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.value",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 440,
+        "wires": [
+            [
+                "27d568edfe1495f2"
+            ]
+        ]
+    },
+    {
+        "id": "b9156e9806c6c9a8",
+        "type": "ui_gauge",
+        "z": "b51cd3c2de6b6fae",
+        "name": "",
+        "group": "f8da1406f9139f63",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "compass",
+        "title": "Direction",
+        "label": "degrees",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "360",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1040,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "27d568edfe1495f2",
+        "type": "switch",
+        "z": "b51cd3c2de6b6fae",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Directio",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 870,
+        "y": 440,
+        "wires": [
+            [
+                "b9156e9806c6c9a8"
+            ],
+            [
+                "1bf7c21bdecb409c"
+            ]
+        ]
+    },
+    {
+        "id": "2c684f2bbbab4934",
+        "type": "ui_group",
+        "name": " Acceleration",
+        "tab": "5c495717e35d9f88",
+        "order": 1,
+        "disp": false,
+        "width": "39",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2096bc74b3257a67",
+        "type": "serial-port",
+        "serialport": "/dev/ttyACM0",
+        "serialbaud": "57600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "\\n",
+        "responsetimeout": "0"
+    },
+    {
+        "id": "f8da1406f9139f63",
+        "type": "ui_group",
+        "name": "Direction",
+        "tab": "a914408e1498b53a",
+        "order": 1,
+        "disp": false,
+        "width": "23",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5c495717e35d9f88",
+        "type": "ui_tab",
+        "name": " Acceleration",
+        "icon": "fa-line-chart ",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a914408e1498b53a",
+        "type": "ui_tab",
+        "name": "Direction",
+        "icon": "fa-compass",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]
